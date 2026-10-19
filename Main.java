@@ -1,13 +1,18 @@
 import java.util.List;
 void main() {
     Library library = new Library();
-    library.addBook(new Book("Clean Code", "Robert Martin", 45, 464));
-    library.addBook(new Book("1984", "George Orwell", 18, 328));
-    library.addBook(new Book("Animal Farm", "George Orwell", 12, 112));
-    library.addBook(new Book("Java Basics", "Max Müller", 35, 520));
-    library.addBook(new Book("The Hobbit", "J. R. R. Tolkien", 28, 310));
 
-    List<Book> all = library.getBooks();
+    Book cleanCode = new Book("Clean Code", "Robert Martin", 45, 464);
+    Book b1984 = new Book("1984", "George Orwell", 18, 328);
+    Book animalFarm = new Book("Animal Farm", "George Orwell", 12, 112);
+    Book javaBasics = new Book("Java Basics", "Max Müller", 35, 520);
+    Book hobbit = new Book("The Hobbit", "J. R. R. Tolkien", 28, 310);
+
+    library.addBook(cleanCode);
+    library.addBook(b1984);
+    library.addBook(animalFarm);
+    library.addBook(javaBasics);
+    library.addBook(hobbit);
 
     //Aufgabe 1
     List<Book> orwell = library.BooksByAuthor("George Orwell");
@@ -18,4 +23,9 @@ void main() {
             System.out.println(book.getTitle());
         }
     }
+
+    //Aufgabe 2
+    List<Book> listOfBooks;
+    listOfBooks = List.of(cleanCode, b1984, animalFarm);
+    System.out.println(library.averageNrOfPages(listOfBooks));
 }

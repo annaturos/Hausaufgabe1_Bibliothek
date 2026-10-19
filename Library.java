@@ -21,4 +21,15 @@ public class Library {
         }
         return result;
     }
+
+    public double averageNrOfPages(List<Book> someBooks) {
+        if (someBooks.isEmpty()) {
+            return 0.0;
+        }
+        double sum = 0.0;
+        for (Book book : someBooks) {
+            sum += book.getPages();
+        }
+        return sum/someBooks.size();
+    }
 }
