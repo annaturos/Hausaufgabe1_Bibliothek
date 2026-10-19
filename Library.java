@@ -53,5 +53,13 @@ public class Library {
         return result;
     }
 
-
+    public List<Book> minPages(List<Book> list, int minPages) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : list) {
+            if (book.getPages() >= minPages) {
+                result.add(book);
+            }
+        }
+        return result;
+    }
 }

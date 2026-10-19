@@ -46,4 +46,14 @@ void main() {
         System.out.println(expensive.getTitle() + " (" + expensive.getPrice() + " Euro)");
     }
 
+    //Aufgabe 5
+    List<Book> minimumPages = library.minPages(all, 300);
+    if (minimumPages.isEmpty()) {
+        System.out.println("none");
+    } else {
+        for (Book book : minimumPages) {
+            System.out.println(book.getTitle());
+        }
+    }
+
 }
