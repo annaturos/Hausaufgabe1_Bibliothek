@@ -56,4 +56,12 @@ void main() {
         }
     }
 
+    //Aufgabe 6
+    List<Book> pair = library.twoInABudget(library.getBooks(), 55);
+    if (pair.isEmpty()) {
+        System.out.println("Doesn't exist");
+    } else {
+        System.out.println(pair.get(0).getTitle() + " + " + pair.get(1).getTitle());
+        System.out.println("Gesamtpreis: " + (pair.get(0).getPrice() + pair.get(1).getPrice()) + " Euro");
+    }
 }

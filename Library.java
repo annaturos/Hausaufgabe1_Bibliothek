@@ -62,4 +62,32 @@ public class Library {
         }
         return result;
     }
+
+    public List<Book> twoInABudget(List<Book> list, int budget) {
+        List<Book> best = new ArrayList<>();
+        double bestPrice = 0;
+        int bestPages = 0;
+
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                Book a = list.get(i);
+                Book b = list.get(j);
+                double price = a.getPrice() + b.getPrice();
+                int pages = a.getPages() + b.getPages();
+
+                if (price > budget) {
+                    continue;
+                }
+
+                if (best.isEmpty() || price > bestPrice || (price == bestPrice && pages > bestPages)) {
+                    best = new ArrayList<>();
+                    best.add(a);
+                    best.add(b);
+                    bestPrice = price;
+                    bestPages = pages;
+                }
+            }
+        }
+        return best;
+    }
 }
