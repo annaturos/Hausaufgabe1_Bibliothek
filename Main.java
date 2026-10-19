@@ -28,4 +28,12 @@ void main() {
     List<Book> listOfBooks;
     listOfBooks = List.of(cleanCode, b1984, animalFarm);
     System.out.println(library.averageNrOfPages(listOfBooks));
+
+    //Aufgabe3
+    List<Book> all = library.getBooks();
+    List<Book> max_30 = library.maxPrice(all, 30);
+    for (Book book : max_30) {
+        System.out.println(book.getTitle() + " -> " + book.getPrice());
+    }
+
 }

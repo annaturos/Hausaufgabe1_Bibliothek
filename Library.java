@@ -32,4 +32,14 @@ public class Library {
         }
         return sum/someBooks.size();
     }
+
+    public List<Book> maxPrice(List<Book> list, double price) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getPrice() <= price) {
+                result.add(book);
+            }
+        }
+        return result;
+    }
 }
