@@ -33,7 +33,17 @@ void main() {
     List<Book> all = library.getBooks();
     List<Book> max_30 = library.maxPrice(all, 30);
     for (Book book : max_30) {
-        System.out.println(book.getTitle() + " -> " + book.getPrice());
+        System.out.println(book.getTitle() + " -> " + book.getPrice() + " Euro");
+    }
+
+    //Aufgabe 4
+    List<Book> listOfBooks2;
+    listOfBooks2 = List.of(hobbit, b1984, animalFarm);
+    if (listOfBooks2.isEmpty()) {
+        System.out.println("none");
+    } else {
+        Book expensive = library.mostExpensiveBook(listOfBooks2);
+        System.out.println(expensive.getTitle() + " (" + expensive.getPrice() + " Euro)");
     }
 
 }

@@ -35,11 +35,23 @@ public class Library {
 
     public List<Book> maxPrice(List<Book> list, double price) {
         List<Book> result = new ArrayList<>();
-        for (Book book : books) {
+        for (Book book : list) {
             if (book.getPrice() <= price) {
                 result.add(book);
             }
         }
         return result;
     }
+
+    public Book mostExpensiveBook(List<Book> list) {
+        Book result = null;
+        for (Book book : list) {
+            if(result == null || book.getPrice() > result.getPrice()) {
+                result = book;
+            }
+        }
+        return result;
+    }
+
+
 }
